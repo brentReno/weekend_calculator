@@ -1,0 +1,16 @@
+{
+  "name": "weekend_project_3",
+  "version": "1.0.0",
+  "description": "Prime Weekend Project- Calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "author": "Brent Reno",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
