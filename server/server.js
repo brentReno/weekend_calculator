@@ -15,3 +15,9 @@ app.get('/', function(req, res){
 
 //set public folder for use
 app.use(express.static('public'));
+
+//post route
+app.post('/math', function(req, res){
+  console.log('The math has been hit!!!!');
+  res.send('Some math will be done here.');
+});//end math post route
