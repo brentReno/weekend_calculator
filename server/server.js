@@ -1,9 +1,11 @@
-var express = require( 'express' );
-var app = express();
+var express = require('express');
+var app     = express();
+var port    =   process.env.PORT || 3000;
 var path = require( 'path' );
+var router = express.Router();
 
 //start listening
-app.listen(3000, 'localhost', function(){
+app.listen( port, function(){
   console.log('The server is listening on port 3000');
 });
 
@@ -16,8 +18,23 @@ app.get('/', function(req, res){
 //set public folder for use
 app.use(express.static('public'));
 
-//post route
-app.post('/math', function(req, res){
-  console.log('The math has been hit!!!!');
-  res.send('Some math will be done here.');
-});//end math post route
+//set up routes
+//addition route
+router.get('/add', function(req, res) {
+    res.send('im the addition page!');
+});
+//subtraction route
+router.get('/subtract', function(req, res) {
+    res.send('im the subtraction page!');
+});
+//multiplication route
+router.get('/multiply', function(req, res) {
+    res.send('im the multiplication page!');
+});
+//division route
+router.get('/divide', function(req, res) {
+    res.send('im the division page!');
+});
+
+//use router
+app.use('/', router);
