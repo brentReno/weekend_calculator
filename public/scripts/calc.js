@@ -21,7 +21,7 @@ $(document).ready(function(){
     //function button on Click
     $(".functionButton").click(function(){
       dataObject.yValue="";
-      dataObject.xValue=numberDisplayText;
+      dataObject.xValue= Number(numberDisplayText);
       numberDisplayText="";
       $('#calcDisplay').empty();
       dataObject.type= $(this).attr('id');
@@ -31,7 +31,7 @@ $(document).ready(function(){
 
     //equals button on click
     $('.equalsButton').on('click',function(){
-      dataObject.yValue= numberDisplayText;
+      dataObject.yValue= Number(numberDisplayText);
       numberDisplayText="";
       $('#calcDisplay').empty();
       console.log("data to be sent", dataObject);
@@ -41,6 +41,7 @@ $(document).ready(function(){
           $.ajax({
             type: "POST",
             url: "/add",
+            data: dataObject,
             success: function(data){
               console.log('ajax success:', data);
             }//end success
@@ -50,6 +51,7 @@ $(document).ready(function(){
           $.ajax({
             type: "POST",
             url: "/subtract",
+            data: dataObject,
             success: function(data){
               console.log('ajax success:', data);
             }//end success
@@ -59,6 +61,7 @@ $(document).ready(function(){
           $.ajax({
             type: "POST",
             url: "/multiply",
+            data: dataObject,
             success: function(data){
               console.log('ajax success:', data);
             }//end success
@@ -68,6 +71,7 @@ $(document).ready(function(){
           $.ajax({
             type: "POST",
             url: "/divide",
+            data: dataObject,
             success: function(data){
               console.log('ajax success:', data);
             }//end success

@@ -3,6 +3,9 @@ var app     = express();
 var port    =   process.env.PORT || 3000;
 var path = require( 'path' );
 var router = express.Router();
+var bodyParser = require('body-parser');
+var urlEncodedParser = bodyParser.urlencoded({ extended: false});
+
 
 //start listening
 app.listen( port, function(){
@@ -20,9 +23,12 @@ app.use(express.static('public'));
 
 //set up routes
 //addition route
-router.post('/add', function(req, res) {
+router.post('/add',urlEncodedParser, function(req, res) {
     console.log('im the addition page!');
-    res.send('im the addition page!');
+    var x = parseInt(req.body.xValue);
+    var y= parseInt(req.body.yValue);
+    var sum =  x+y;
+    res.send("Server sent: " + sum);
 });
 //subtraction route
 router.post('/subtract', function(req, res) {
