@@ -1,16 +1,25 @@
 div{
   width: 150px;
   display: block;
+
 }
 p{
-  max-width: 174px;
+  max-width: 40px;
   position: absolute;
-  font-size: 28px;
-  display: block;
-  text-align: right;
-  margin-left: auto;
+  font-size: 100%;
+  padding: 10px;
 }
-
+#bootstrapOverrides button{
+  background: #dddddd;
+  border-color: #222222;
+  border-bottom-width: 3px;
+  box-shadow: 2px 0 3px #777777;
+}
+#bootstrapOverrides button:hover{
+  background-color: #999999;
+  border-bottom-width: 0;
+  box-shadow: 0 0 transparent;
+}
 .display{
   height: 40px;
   width: 174px;
@@ -18,15 +27,23 @@ p{
   margin-left: auto;
   margin-right: auto;
   background-color: lightgrey;
+  text-align: right;
+  border-style: inset;
+  border-color: black;
+  border-width: 2px;
 }
 
+
 .calculator{
-  height:300px;
+  height:320px;
   width:200px;
-  background-color: darkgrey;
+  background-color: #666666;
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 3px;
+  border-bottom: 4px solid #333333;
+  box-shadow: 2px 0 3px #777777;
 }
 .calc{
   width: 175px;
