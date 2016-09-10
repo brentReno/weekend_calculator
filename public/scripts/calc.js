@@ -2,7 +2,7 @@ console.log(' Calc.js is sourced');
 var buttonData=[{name: 'zero', value:0}, {name: 'one', value:1},{name: 'two', value:2}, {name:'three', value:3},
 {name:'four', value:4}, {name:'five', value:5}, {name:'six', value:6}, {name:'seven', value:7}, {name:'eight', value:8},
 {name:'nine', value:9}, {name: 'add', value: '+'}, {name:'subtract', value:'-'},{name: "divide", value: '/'}, {name:'multiply', value: '*'},
-{name: 'equals', value:'='} ];
+{name:'decimal', value:'.'}, {name: 'equals', value:'='} ];
 
 $(document).ready(function(){
   var numberDisplayText='';
@@ -96,6 +96,9 @@ var displayButtons = function(){
     else if(buttonData[ i ].value == '+' ||buttonData[ i ].value == '-' ||buttonData[ i ].value == '/' ||buttonData[ i ].value == '*' ){
       calcDivText +='<button class="functionButton" id="'+ buttonData[ i ].name +'" data-id='+ i +'>'+buttonData[ i ].value+ "</button>";
       $('#calcDiv').html(calcDivText);
+    }
+      else if(buttonData[ i ].value =='.'){
+        calcDivText +='<button class="numberButton" id="'+ buttonData[ i ].name +'" data-id=".">'+buttonData[ i ].value+ "</button>";
     } else {
       calcDivText +='<button class="numberButton" id="'+ buttonData[ i ].name +'" data-id='+ i +'>'+buttonData[ i ].value+ "</button>";
       $('#calcDiv').html(calcDivText);

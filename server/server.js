@@ -26,32 +26,32 @@ app.use(express.static('public'));
 //addition route
 router.post('/add',urlEncodedParser, function(req, res) {
     console.log('im the addition page!');
-     x = parseInt(req.body.xValue);
-     y= parseInt(req.body.yValue);
+     x = Number(req.body.xValue);
+     y= Number(req.body.yValue);
     var sum =  x+y;
     res.send("Server sent: " + sum);
 });
 //subtraction route
 router.post('/subtract', urlEncodedParser, function(req, res) {
   console.log('im the subtraction page!');
-  x = parseInt(req.body.xValue);
-  y= parseInt(req.body.yValue);
+  x = Number(req.body.xValue);
+  y= Number(req.body.yValue);
  var difference =  x-y;
  res.send("Server sent: " + difference);
 });
 //multiplication route
 router.post('/multiply', urlEncodedParser, function(req, res) {
     console.log('im the multiplication page!');
-    x = parseInt(req.body.xValue);
-    y= parseInt(req.body.yValue);
+    x = Number(req.body.xValue);
+    y= Number(req.body.yValue);
    var total =  x*y;
    res.send("Server sent: " + total);
 });
 //division route
 router.post('/divide', urlEncodedParser, function(req, res) {
     console.log('im the division page!');
-    x = parseInt(req.body.xValue);
-    y= parseInt(req.body.yValue);
+    x = Number(req.body.xValue);
+    y= Number(req.body.yValue);
    var result =  x/y;
    res.send("Server sent: " + result);
 });
