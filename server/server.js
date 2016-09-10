@@ -29,7 +29,7 @@ router.post('/add',urlEncodedParser, function(req, res) {
      x = Number(req.body.xValue);
      y= Number(req.body.yValue);
     var sum =  x+y;
-    res.send("Server sent: " + sum);
+    res.send({total: sum});
 });
 //subtraction route
 router.post('/subtract', urlEncodedParser, function(req, res) {
@@ -37,7 +37,7 @@ router.post('/subtract', urlEncodedParser, function(req, res) {
   x = Number(req.body.xValue);
   y= Number(req.body.yValue);
  var difference =  x-y;
- res.send("Server sent: " + difference);
+ res.send({total: difference});
 });
 //multiplication route
 router.post('/multiply', urlEncodedParser, function(req, res) {
@@ -45,15 +45,15 @@ router.post('/multiply', urlEncodedParser, function(req, res) {
     x = Number(req.body.xValue);
     y= Number(req.body.yValue);
    var total =  x*y;
-   res.send("Server sent: " + total);
+   res.send({total: total});
 });
 //division route
 router.post('/divide', urlEncodedParser, function(req, res) {
     console.log('im the division page!');
     x = Number(req.body.xValue);
-    y= Number(req.body.yValue);
+    y= parseInt(req.body.yValue);
    var result =  x/y;
-   res.send("Server sent: " + result);
+   res.send({total: result});
 });
 
 //use router

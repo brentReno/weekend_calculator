@@ -44,6 +44,8 @@ $(document).ready(function(){
             data: dataObject,
             success: function(data){
               console.log('ajax success:', data);
+              numberDisplayText = data.total;
+              $('#calcDisplay').html(numberDisplayText);
             }//end success
           });//end AJAX
           break;
@@ -54,6 +56,8 @@ $(document).ready(function(){
             data: dataObject,
             success: function(data){
               console.log('ajax success:', data);
+              numberDisplayText = data.total;
+              $('#calcDisplay').html(numberDisplayText);
             }//end success
           });//end AJAX
           break;
@@ -64,6 +68,8 @@ $(document).ready(function(){
             data: dataObject,
             success: function(data){
               console.log('ajax success:', data);
+              numberDisplayText = data.total;
+              $('#calcDisplay').html(numberDisplayText);
             }//end success
           });//end AJAX
           break;
@@ -74,6 +80,8 @@ $(document).ready(function(){
             data: dataObject,
             success: function(data){
               console.log('ajax success:', data);
+              numberDisplayText = data.total;
+              $('#calcDisplay').html(numberDisplayText);
             }//end success
           });//end AJAX
           break;
