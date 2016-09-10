@@ -20,6 +20,7 @@ $(document).ready(function(){
 
     //function button on Click
     $(".functionButton").click(function(){
+      dataObject.yValue="";
       dataObject.xValue=numberDisplayText;
       numberDisplayText="";
       $('#calcDisplay').empty();
@@ -35,17 +36,47 @@ $(document).ready(function(){
       $('#calcDisplay').empty();
       console.log("data to be sent", dataObject);
       console.log('display',numberDisplayText);
-
+      switch (dataObject.type) {
+        case "add":
+          $.ajax({
+            type: "POST",
+            url: "/add",
+            success: function(data){
+              console.log('ajax success:', data);
+            }//end success
+          });//end AJAX
+          break;
+          case"subtract":
+          $.ajax({
+            type: "POST",
+            url: "/subtract",
+            success: function(data){
+              console.log('ajax success:', data);
+            }//end success
+          });//end AJAX
+          break;
+          case "multiply":
+          $.ajax({
+            type: "POST",
+            url: "/multiply",
+            success: function(data){
+              console.log('ajax success:', data);
+            }//end success
+          });//end AJAX
+          break;
+          case "divide":
+          $.ajax({
+            type: "POST",
+            url: "/divide",
+            success: function(data){
+              console.log('ajax success:', data);
+            }//end success
+          });//end AJAX
+          break;
+        default:
+        console.log('Does not compute');
+      }
     });//end equals button onClick
-
-  //AJAX Call
-  $.ajax({
-    type: "POST",
-    url: "/firstNumber",
-    success: function(data){
-      console.log('ajax success:', data);
-    }//end success
-  });//end AJAX
 });//end DOC ready
 
 var displayButtons = function(){

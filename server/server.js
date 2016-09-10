@@ -20,19 +20,23 @@ app.use(express.static('public'));
 
 //set up routes
 //addition route
-router.get('/add', function(req, res) {
+router.post('/add', function(req, res) {
+    console.log('im the addition page!');
     res.send('im the addition page!');
 });
 //subtraction route
-router.get('/subtract', function(req, res) {
+router.post('/subtract', function(req, res) {
+  console.log('im the subtraction page!');
     res.send('im the subtraction page!');
 });
 //multiplication route
-router.get('/multiply', function(req, res) {
+router.post('/multiply', function(req, res) {
+    console.log('im the multiplication page!');
     res.send('im the multiplication page!');
 });
 //division route
-router.get('/divide', function(req, res) {
+router.post('/divide', function(req, res) {
+    console.log('im the division page!');
     res.send('im the division page!');
 });
 
