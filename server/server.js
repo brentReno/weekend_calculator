@@ -5,7 +5,8 @@ var path = require( 'path' );
 var router = express.Router();
 var bodyParser = require('body-parser');
 var urlEncodedParser = bodyParser.urlencoded({ extended: false});
-
+var x =0;
+var y=0;
 
 //start listening
 app.listen( port, function(){
@@ -25,25 +26,34 @@ app.use(express.static('public'));
 //addition route
 router.post('/add',urlEncodedParser, function(req, res) {
     console.log('im the addition page!');
-    var x = parseInt(req.body.xValue);
-    var y= parseInt(req.body.yValue);
+     x = parseInt(req.body.xValue);
+     y= parseInt(req.body.yValue);
     var sum =  x+y;
     res.send("Server sent: " + sum);
 });
 //subtraction route
-router.post('/subtract', function(req, res) {
+router.post('/subtract', urlEncodedParser, function(req, res) {
   console.log('im the subtraction page!');
-    res.send('im the subtraction page!');
+  x = parseInt(req.body.xValue);
+  y= parseInt(req.body.yValue);
+ var difference =  x-y;
+ res.send("Server sent: " + difference);
 });
 //multiplication route
-router.post('/multiply', function(req, res) {
+router.post('/multiply', urlEncodedParser, function(req, res) {
     console.log('im the multiplication page!');
-    res.send('im the multiplication page!');
+    x = parseInt(req.body.xValue);
+    y= parseInt(req.body.yValue);
+   var total =  x*y;
+   res.send("Server sent: " + total);
 });
 //division route
-router.post('/divide', function(req, res) {
+router.post('/divide', urlEncodedParser, function(req, res) {
     console.log('im the division page!');
-    res.send('im the division page!');
+    x = parseInt(req.body.xValue);
+    y= parseInt(req.body.yValue);
+   var result =  x/y;
+   res.send("Server sent: " + result);
 });
 
 //use router
